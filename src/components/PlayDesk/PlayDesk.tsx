@@ -174,9 +174,8 @@ const PlayDesk = () => {
                 seconds++
             }
         }, TIMER_TIME)
-
         return () => clearTimeout(showClock)
-    }, [isShowing, result])
+    }, [isShowing, result]) // eslint-disable-line react-hooks/exhaustive-deps
 
     useEffect(() => {
         if (start) {
@@ -200,7 +199,7 @@ const PlayDesk = () => {
             }
             setResult(isCorrect)
         }
-    }, [answer])
+    }, [answer]) // eslint-disable-line react-hooks/exhaustive-deps
 
     useEffect(() => {
         if (result) {
@@ -208,18 +207,19 @@ const PlayDesk = () => {
         } else if (result === false) {
             wrongAnswerHandler()
         }
-    }, [result])
+
+    }, [result]) // eslint-disable-line react-hooks/exhaustive-deps
 
     // Сетаем первоначальное состояние доски и рандомных чисел
     useEffect(() => {
         clearPlayDesk()
-    }, [])
+    }, []) // eslint-disable-line react-hooks/exhaustive-deps
 
     useEffect(() => {
         if(!start && !isShowing && result === null) {
             setAttempt(state.app.settings?.startingPoint!)
         }
-    }, [state.app.settings?.startingPoint, result])
+    }, [state.app.settings?.startingPoint, result]) // eslint-disable-line react-hooks/exhaustive-deps
 
     // RENDER
     return (

@@ -1,4 +1,4 @@
-import React, {useCallback, useContext, useEffect, useState} from 'react';
+import React, {useContext, useState} from 'react';
 import s from './Settings.module.css'
 import {CHANGE_STARTING_POINT, CHANGE_THEME, ContextApp} from "../../store/reducers";
 
