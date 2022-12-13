@@ -1,0 +1,90 @@
+.content {
+  background-color: var(--block-bg);
+  padding: 30px 15px;
+  border-radius: 20px;
+  min-width: 250px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  #themeSwitcher {
+    background-color: var(--bg);
+    border: var(--active) 2px solid;
+    border-radius: 20px;
+    width: 60px;
+    height: 30px;
+    position: relative;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    input {
+      display: none;
+    }
+
+    span {
+      display: block;
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      border-radius: 100%;
+      background-color: var(--active);
+      top: 50%;
+      transform: translateY(-50%);
+      right: 34px;
+      transition: right 0.3s ease;
+    }
+
+    input[value='dark'] ~ span{
+      right: 3px;
+    }
+
+    svg {
+      position: absolute;
+      height: 30px;
+      width: 35px;
+      fill: var(--default-txt);
+      &:nth-child(2) {
+        right: 100%;
+      }
+      &:last-child {
+        left: 100%;
+      }
+    }
+  }
+
+  #startingPointSetter {
+    display: flex;
+    box-shadow: none;
+    align-items: center;
+    margin-top: 15px;
+    p {
+      font-size: 18px;
+      margin-right: 10px;
+      color: var(--default-txt);
+    }
+    input {
+      background-color: var(--bg);
+      border: var(--active) 2px solid;
+      border-radius: 20px;
+      outline: none;
+      width: 30px;
+      height: 30px;
+      text-align: center;
+      font-size: 18px;
+      font-family: Gilroy, sans-serif;
+      font-weight: 100;
+      color: var(--default-txt);
+    }
+
+    input[type="number"]::-webkit-outer-spin-button,
+    input[type="number"]::-webkit-inner-spin-button {
+      -webkit-appearance: none; // Yeah, yeah everybody write about it
+    }
+
+    input[type='number'],
+    input[type="number"]:hover,
+    input[type="number"]:focus {
+      appearance: none;
+      -moz-appearance: textfield;
+    }
+  }
+}

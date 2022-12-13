@@ -1,0 +1,70 @@
+.content {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 315px;
+  height: 450px;
+  justify-content: space-between;
+}
+.content .mainDesk {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 25px;
+}
+.content .mainDesk span {
+  width: 60px;
+  height: 60px;
+  background-color: var(--block-input);
+  border-radius: 20px;
+  box-shadow: inset 4px 4px 11px rgba(0, 0, 0, 0.25);
+  filter: drop-shadow(-4px -4px 4px rgba(0, 0, 0, 0.25));
+  transition: box-shadow 0.3s ease, background-color 0.3s ease;
+}
+.content .mainDesk span.active {
+  background-color: var(--active);
+  box-shadow: inset 4px 4px 11px var(--active-shadow);
+}
+.content .mainDesk span.correct {
+  background-color: var(--correct);
+  box-shadow: inset 4px 4px 11px var(--correct-shadow);
+}
+.content .mainDesk span.wrong {
+  background-color: var(--wrong);
+  box-shadow: inset 4px 4px 11px var(--wrong-shadow);
+}
+.content .indicator {
+  font-size: 26px;
+  color: var(--active);
+}
+.content button {
+  background-color: var(--correct);
+  color: var(--btn-txt);
+  font-weight: 700;
+  font-size: 40px;
+  padding: 5px 43px;
+  border-radius: 20px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+.content #attemptsIndicator {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 30px;
+}
+.content #attemptsIndicator h2 {
+  font-weight: 100;
+  color: var(--default-txt);
+}
+.content #attemptsIndicator span {
+  text-align: center;
+  width: 100%;
+  display: block;
+  font-size: 26px;
+  color: var(--default-txt);
+}
+
+/*# sourceMappingURL=PlayDesk.module.css.map */

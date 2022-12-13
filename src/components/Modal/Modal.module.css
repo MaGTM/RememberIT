@@ -1,0 +1,89 @@
+.content {
+  display: flex;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+  padding: 20px 0;
+  top: 0;
+  transform: scale(0, 0);
+  backdrop-filter: blur(5px);
+  background-color: rgba(0, 0, 0, 0.2);
+  justify-content: center;
+  align-items: center;
+}
+.content #modalCloseIcon {
+  position: absolute;
+  fill: #F5F5FF;
+  width: 25px;
+  height: 25px;
+  top: 25px;
+  right: 25px;
+  cursor: pointer;
+}
+.content.active {
+  animation: unfold var(--modalOpenTiming) ease forwards;
+}
+@keyframes unfold {
+  0% {
+    transform: scale(0, 0.005);
+  }
+  50% {
+    transform: scale(1, 0.005);
+  }
+  100% {
+    transform: scale(1, 1);
+  }
+}
+.content.active div {
+  transform: scale(0, 0);
+  animation: scaleUp var(--modalContentTiming) ease forwards;
+  animation-delay: var(--modalOpenTiming);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+.content.active > svg {
+  transform: scale(0, 0);
+  animation: scaleUp var(--modalContentTiming) ease forwards;
+  animation-delay: var(--modalOpenTiming);
+}
+.content.out {
+  animation: fold var(--modalOpenTiming) ease forwards;
+  animation-delay: var(--modalContentTiming);
+  transform: scale(1, 1);
+}
+@keyframes fold {
+  0% {
+    transform: scaleY(1) scaleX(1);
+  }
+  50% {
+    transform: scaleY(0.005) scaleX(1);
+  }
+  100% {
+    transform: scaleY(0.005) scaleX(0);
+  }
+}
+.content.out div {
+  animation: scaleDown var(--modalContentTiming) ease forwards;
+}
+.content.out > svg {
+  transform: scale(1, 1);
+  animation: scaleDown var(--modalContentTiming) ease forwards;
+}
+@keyframes scaleUp {
+  from {
+    transform: scale(0, 0);
+  }
+  to {
+    transform: scale(1, 1);
+  }
+}
+@keyframes scaleDown {
+  from {
+    transform: scale(1, 1);
+  }
+  to {
+    transform: scale(0, 0);
+  }
+}
+
+/*# sourceMappingURL=Modal.module.css.map */

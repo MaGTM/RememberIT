@@ -1,38 +1,110 @@
-.App {
-  text-align: center;
+:root {
+    /*Light Mode*/
+    --bg--light: #D5D5E1;
+    --block-bg--light: #F5F5FF;
+    --default-txt--light: black;
+    --btn-txt--light: #617A41;
+    --block-input--light: white;
+    --correct--light: #C1F381;
+    --correct-shadow--light: rgba(69, 122, 0, 0.5);
+    --wrong--light: #FE7B7B;
+    --wrong-shadow--light: rgba(160, 27, 27, 0.5);
+    --active--light: #6385FF;
+    --active-shadow--light: rgba(21, 59, 198, 0.5);
+    /*Dark Mode*/
+    --bg--dark: #222227;
+    --block-bg--dark: #343442;
+    --default-txt--dark: white;
+    --btn-txt--dark: #526042;
+    --block-input--dark: #333333;
+    --correct--dark: #A3BF83;
+    --correct-shadow--dark: rgba(35, 62, 0, 0.83);
+    --wrong--dark: #D56C6F;
+    --wrong-shadow--dark: rgba(83, 1, 4, 0.7);
+    --active--dark: #5975D9;
+    --active-shadow--dark: rgba(4, 25, 97, 0.7);
+
+    /*Other variables*/
+    --modalOpenTiming: 0.8s;
+    --modalContentTiming: 0.3s;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+:root[color-scheme='light'] {
+    --bg: var(--bg--light);
+    --block-bg: var(--block-bg--light);
+    --default-txt: var(--default-txt--light);
+    --btn-txt: var(--btn-txt--light);
+    --block-input: var(--block-input--light);
+    --correct: var(--correct--light);
+    --correct-shadow: var(--correct-shadow--light);
+    --wrong: var(--wrong--light);
+    --wrong-shadow: var(--wrong-shadow--light);
+    --active: var(--active--light);
+    --active-shadow: var(--active-shadow--light);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+:root[color-scheme='dark'] {
+    --bg: var(--bg--dark);
+    --block-bg: var(--block-bg--dark);
+    --default-txt: var(--default-txt--dark);
+    --btn-txt: var(--btn-txt--dark);
+    --block-input: var(--block-input--dark);
+    --correct: var(--correct--dark);
+    --correct-shadow: var(--correct-shadow--dark);
+    --wrong: var(--wrong--dark);
+    --wrong-shadow: var(--wrong-shadow--dark);
+    --active: var(--active--dark);
+    --active-shadow: var(--active-shadow--dark);
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+body {
+    font-family: Gilroy, sans-serif;
+    font-weight: 100;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.App-link {
-  color: #61dafb;
+.app {
+    background-color: var(--block-bg);
+    width: 800px;
+    height: 650px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px 0;
+    justify-content: space-between;
+    position: relative;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.app > .title {
+    color: var(--default-txt);
+    display: flex;
+}
+
+.app > .title > h1 {
+    font-weight: 100;
+    font-size: 40px;
+    margin-right: 15px;
+}
+
+.app > #infoIcon {
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    right: 30px;
+    top: 33px;
+    fill: var(--wrong);
+    cursor: pointer;
+}
+
+.app > #settingIcon {
+    position: absolute;
+    bottom: 38px;
+    right: 30px;
+    width: 40px;
+    height: 40px;
+    fill: var(--active);
+    cursor: pointer;
 }

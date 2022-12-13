@@ -1,0 +1,86 @@
+.content {
+  background-color: var(--block-bg);
+  padding: 30px 15px;
+  border-radius: 20px;
+  min-width: 250px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.content #themeSwitcher {
+  background-color: var(--bg);
+  border: var(--active) 2px solid;
+  border-radius: 20px;
+  width: 60px;
+  height: 30px;
+  position: relative;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+.content #themeSwitcher input {
+  display: none;
+}
+.content #themeSwitcher span {
+  display: block;
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border-radius: 100%;
+  background-color: var(--active);
+  top: 50%;
+  transform: translateY(-50%);
+  right: 34px;
+  transition: right 0.3s ease;
+}
+.content #themeSwitcher input[value=dark] ~ span {
+  right: 3px;
+}
+.content #themeSwitcher svg {
+  position: absolute;
+  height: 30px;
+  width: 35px;
+  fill: var(--default-txt);
+}
+.content #themeSwitcher svg:nth-child(2) {
+  right: 100%;
+}
+.content #themeSwitcher svg:last-child {
+  left: 100%;
+}
+.content #startingPointSetter {
+  display: flex;
+  box-shadow: none;
+  align-items: center;
+  margin-top: 15px;
+}
+.content #startingPointSetter p {
+  font-size: 18px;
+  margin-right: 10px;
+  color: var(--default-txt);
+}
+.content #startingPointSetter input {
+  background-color: var(--bg);
+  border: var(--active) 2px solid;
+  border-radius: 20px;
+  outline: none;
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  font-size: 18px;
+  font-family: Gilroy, sans-serif;
+  font-weight: 100;
+  color: var(--default-txt);
+}
+.content #startingPointSetter input[type=number]::-webkit-outer-spin-button,
+.content #startingPointSetter input[type=number]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+.content #startingPointSetter input[type=number],
+.content #startingPointSetter input[type=number]:hover,
+.content #startingPointSetter input[type=number]:focus {
+  appearance: none;
+  -moz-appearance: textfield;
+}
+
+/*# sourceMappingURL=Settings.module.css.map */
